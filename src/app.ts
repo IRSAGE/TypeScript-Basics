@@ -1,10 +1,26 @@
-// //The Dom & Type Casting
-// const anchor = document.querySelector("a")!;
-// console.log(anchor.href); //this would return an error so you need to put ! sighn on the querySelector
-// // or use an if statement to remove the error
-// if (anchor) {
-//   console.log(anchor.href);
-// }
+//Class
+
+//class Initialization
+class Invoices {
+  client: string;
+  details: string;
+  amount: number;
+
+  constructor(c: string, d: string, a: number) {
+    this.client = c;
+    this.details = d;
+    this.amount = a;
+  }
+  format() {
+    return `${this.client} owes £${amount} for ${details}`;
+  }
+}
+//class instancite an object from the class
+const invOne = new Invoices("me", "loan", 300);
+
+let invoices: Invoices[] = []; //this will only allow objects created from the class Invoices
+
+invoices.push(invOne);
 
 //const form = document.querySelector("form")!;
 const form = document.querySelector(".new-item-form") as HTMLFormElement;
