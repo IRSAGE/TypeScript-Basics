@@ -1,11 +1,26 @@
 "use strict";
 //Class
 //class Initialization
+//all class properties are public by default
+//Public :means the property can be access anywhere
+//Private :means the property can only be access inside the class
+//readonly :means the property can be read outside and inside the class its self but we can't change it
 class Invoices {
     constructor(c, d, a) {
         this.client = c;
         this.details = d;
         this.amount = a;
+    }
+    format() {
+        return `${this.client} owes £${amount} for ${details}`;
+    }
+}
+//the Above declaration is same as this one below
+class Invoice {
+    constructor(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
     }
     format() {
         return `${this.client} owes £${amount} for ${details}`;

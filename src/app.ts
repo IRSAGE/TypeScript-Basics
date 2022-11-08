@@ -1,16 +1,34 @@
 //Class
 
 //class Initialization
+
+//all class properties are public by default
+
+//Public :means the property can be access anywhere
+//Private :means the property can only be access inside the class
+//readonly :means the property can be read outside and inside the class its self but we can't change it
 class Invoices {
-  client: string;
-  details: string;
-  amount: number;
+  readonly client: string;
+  private details: string;
+  public amount: number;
 
   constructor(c: string, d: string, a: number) {
     this.client = c;
     this.details = d;
     this.amount = a;
   }
+  format() {
+    return `${this.client} owes £${amount} for ${details}`;
+  }
+}
+//the Above declaration is same as this one below
+class Invoice {
+  constructor(
+    readonly client: string,
+    private details: string,
+    public amount: number
+  ) {}
+
   format() {
     return `${this.client} owes £${amount} for ${details}`;
   }
