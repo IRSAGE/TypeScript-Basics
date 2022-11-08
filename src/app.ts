@@ -28,6 +28,24 @@ let invoices: Invoices[] = []; //this will only allow objects created from the c
 invoices.push(invOne);
 console.log(invoices);
 
+//Interfaces
+interface IsPerson {
+  name: string;
+  age: number;
+  speak(a: string): void;
+  spend(a: number): number;
+}
+const me: IsPerson = {
+  name: "Me",
+  age: 30,
+  speak(text: string): void {
+    console.log(text);
+  },
+  spend(amount: number): number {
+    return amount;
+  },
+};
+
 //const form = document.querySelector("form")!;
 const form = document.querySelector(".new-item-form") as HTMLFormElement;
 

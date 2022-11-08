@@ -7,20 +7,30 @@
 import { Invoices } from "./classes/invoice.js";
 //the Above declaration is same as this one below
 class Invoice {
-  constructor(client, details, amount) {
-    this.client = client;
-    this.details = details;
-    this.amount = amount;
-  }
-  format() {
-    return `${this.client} owes £${amount} for ${details}`;
-  }
+    constructor(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
+    }
+    format() {
+        return `${this.client} owes £${amount} for ${details}`;
+    }
 }
 //class instancite an object from the class
 const invOne = new Invoices("me", "loan", 300);
 let invoices = []; //this will only allow objects created from the class Invoices
 invoices.push(invOne);
 console.log(invoices);
+const me = {
+    name: "Me",
+    age: 30,
+    speak(text) {
+        console.log(text);
+    },
+    spend(amount) {
+        return amount;
+    },
+};
 //const form = document.querySelector("form")!;
 const form = document.querySelector(".new-item-form");
 //Inputs
@@ -29,6 +39,6 @@ const tofrom = document.querySelector("#tofrom");
 const details = document.querySelector("#details");
 const amount = document.querySelector("#amount");
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  console.log(type.value, tofrom.value, details.value, amount.value);
+    e.preventDefault();
+    console.log(type.value, tofrom.value, details.value, amount.value);
 });
