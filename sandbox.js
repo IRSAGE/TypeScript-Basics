@@ -1,23 +1,16 @@
-// explicit types
-var character;
-var age;
-age = 30;
-// age = "";this will not work
-//arrays
-var ninja; //an array of strings
-//ninja = [10, 20]; will not work
-ninja = ["me"];
-//ninja.push("metoo"); this will not work
-//union types (an array of many types)
+// Dyanamic Types
+var age = 25;
+age = true;
+age = "Hello";
+age = { name: "me" };
+//all would work since the variable age can have anytype any time
+//Arrays
 var mixed = [];
-mixed.push("hello");
-mixed.push(20);
-//mixed.push(false); will not work
-var uid; // union types on a normal variable
+mixed.push(5);
+mixed.push("Me");
+mixed.push(true);
+console.log(mixed);
 //Objects
-var ninjaOne;
-ninjaOne = { name: "Me", age: 30 };
-//ninjaOne = "test"; will not work
-var ninjaTwo;
-ninjaTwo = { name: "Me", age: 30 };
-// ninjaTwo = { name: "Me" }; will not work becouse it needs all the two fields decraled to have
+var ninja;
+ninja = { name: "Me", age: 30 };
+console.log(ninja);
