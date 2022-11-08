@@ -1,18 +1,23 @@
-// arrays
-var names = ["hello"];
-names.push("hello2");
-// names.push(3); will not work
-var numbers = [10, 20, 30];
-numbers.push(25);
-//numbers[1] = "hi"; will not work
-var mixed = ["sibo", 4, "frontDev", 8]; //this works as an array of mixed both numbers and string
-mixed[0] = 3; // this wiil work you.
+// explicit types
+var character;
+var age;
+age = 30;
+// age = "";this will not work
+//arrays
+var ninja; //an array of strings
+//ninja = [10, 20]; will not work
+ninja = ["me"];
+//ninja.push("metoo"); this will not work
+//union types (an array of many types)
+var mixed = [];
+mixed.push("hello");
+mixed.push(20);
+//mixed.push(false); will not work
+var uid; // union types on a normal variable
 //Objects
-var ninja = {
-    name: "mario",
-    belt: "black",
-    age: 30
-};
-ninja.age = 40; //this will work
-// ninja.age = ""; //this will not work
-// ninja.skills = ["fighting","running"]; //this will not work
+var ninjaOne;
+ninjaOne = { name: "Me", age: 30 };
+//ninjaOne = "test"; will not work
+var ninjaTwo;
+ninjaTwo = { name: "Me", age: 30 };
+// ninjaTwo = { name: "Me" }; will not work becouse it needs all the two fields decraled to have

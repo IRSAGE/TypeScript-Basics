@@ -1,25 +1,34 @@
-// arrays
-let names = ["hello"];
+// explicit types
+let character: string;
+let age: number;
 
-names.push("hello2");
-// names.push(3); will not work
+age = 30;
+// age = "";this will not work
 
-let numbers = [10, 20, 30];
+//arrays
+let ninja: string[]; //an array of strings
+//ninja = [10, 20]; will not work
 
-numbers.push(25);
-//numbers[1] = "hi"; will not work
+ninja = ["me"];
+//ninja.push("metoo"); this will not work
 
-let mixed = ["sibo", 4, "frontDev", 8]; //this works as an array of mixed both numbers and string
-mixed[0] = 3; // this wiil work you.
+//union types (an array of many types)
+let mixed: (string | number)[] = [];
+mixed.push("hello");
+mixed.push(20);
+//mixed.push(false); will not work
+
+let uid: string | number; // union types on a normal variable
 
 //Objects
+let ninjaOne: object;
+ninjaOne = { name: "Me", age: 30 };
+//ninjaOne = "test"; will not work
 
-let ninja = {
-  name: "mario",
-  belt: "black",
-  age: 30, // they work as other variables you can not change the type of them after decralation.
+let ninjaTwo: {
+  name: string;
+  age: number;
 };
 
-ninja.age = 40; //this will work
-// ninja.age = ""; //this will not work
-// ninja.skills = ["fighting","running"]; //this will not work
+ninjaTwo = { name: "Me", age: 30 };
+// ninjaTwo = { name: "Me" }; will not work becouse it needs all the two fields decraled to have
