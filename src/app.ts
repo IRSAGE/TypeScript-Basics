@@ -7,20 +7,7 @@
 //Public :means the property can be access anywhere
 //Private :means the property can only be access inside the class
 //readonly :means the property can be read outside and inside the class its self but we can't change it
-class Invoices {
-  readonly client: string;
-  private details: string;
-  public amount: number;
-
-  constructor(c: string, d: string, a: number) {
-    this.client = c;
-    this.details = d;
-    this.amount = a;
-  }
-  format() {
-    return `${this.client} owes £${amount} for ${details}`;
-  }
-}
+import { Invoices } from "./classes/invoice.js";
 //the Above declaration is same as this one below
 class Invoice {
   constructor(
@@ -39,6 +26,7 @@ const invOne = new Invoices("me", "loan", 300);
 let invoices: Invoices[] = []; //this will only allow objects created from the class Invoices
 
 invoices.push(invOne);
+console.log(invoices);
 
 //const form = document.querySelector("form")!;
 const form = document.querySelector(".new-item-form") as HTMLFormElement;
