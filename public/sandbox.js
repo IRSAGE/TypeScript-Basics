@@ -1,8 +1,23 @@
 "use strict";
-//Type Aliases
-const greet = (uid, item) => {
-    console.log(`${item} has a uid of ${uid}`);
+//Function Signatures
+// let greet: Function;
+// example 1
+let greet;
+greet = (name, greeting) => {
+    console.log(`${name} says ${greeting}`);
 };
-const greet2 = (user) => {
-    console.log(`${user.name} with id  ${user.uid}`);
+// example 2
+let calc;
+calc = (numOne, numTwo, action) => {
+    if (action === "add") {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
+};
+// example 3
+let logDetails;
+logDetails = (ninja) => {
+    console.log(`${ninja.name} is ${ninja.age} years old`);
 };
