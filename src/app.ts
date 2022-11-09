@@ -19,11 +19,15 @@ const list = new ListTempelate(ul);
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
 
+  //Tuples
+  let values: [string, string, number];
+  values = [tofrom.value, details.value, Number(amount.value)];
+
   let doc: HasFormatter;
   if (type.value === "invoice") {
-    doc = new Invoices(tofrom.value, details.value, Number(amount.value));
+    doc = new Invoices(...values);
   } else {
-    doc = new Payment(tofrom.value, details.value, Number(amount.value));
+    doc = new Payment(...values);
   }
   list.render(doc, type.value, "start");
 });

@@ -13,12 +13,15 @@ const ul = document.querySelector("ul");
 const list = new ListTempelate(ul);
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+    //Tuples
+    let values;
+    values = [tofrom.value, details.value, Number(amount.value)];
     let doc;
     if (type.value === "invoice") {
-        doc = new Invoices(tofrom.value, details.value, Number(amount.value));
+        doc = new Invoices(...values);
     }
     else {
-        doc = new Payment(tofrom.value, details.value, Number(amount.value));
+        doc = new Payment(...values);
     }
     list.render(doc, type.value, "start");
 });
