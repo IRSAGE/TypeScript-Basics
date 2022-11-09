@@ -8,6 +8,8 @@
 //Private :means the property can only be access inside the class
 //readonly :means the property can be read outside and inside the class its self but we can't change it
 import { Invoices } from "./classes/invoice.js";
+import { Payment } from "./classes/Payment.js";
+import { HasFormatter } from "./interfaces/HasFormatter.js";
 //the Above declaration is same as this one below
 class Invoice {
   constructor(
@@ -57,5 +59,12 @@ const amount = document.querySelector("#amount") as HTMLSelectElement;
 
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
-  console.log(type.value, tofrom.value, details.value, amount.value);
+
+  let doc: HasFormatter;
+  if (type.value === "invoice") {
+    doc = new Invoices(tofrom.value, details.value, Number(amount.value));
+  } else {
+    doc = new Payment(tofrom.value, details.value, Number(amount.value));
+  }
+  console.log(doc);
 });
